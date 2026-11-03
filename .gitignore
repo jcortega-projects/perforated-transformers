@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Datasets and checkpoints
+data/
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Experiment outputs
+results/*
+!results/.gitkeep
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
