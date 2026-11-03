@@ -1,0 +1,27 @@
+# Versions below are from the working Windows environment (Python 3.11.9) used for the
+# vanilla baseline. Recorded for reference; not re-installed or re-tested for this commit.
+#
+# torch/torchvision/torchaudio were installed as CUDA 12.8 builds
+# (torch 2.11.0+cu128, torchvision 0.26.0+cu128, torchaudio 2.11.0+cu128).
+# Install them from the PyTorch CUDA 12.8 index, e.g.:
+#   pip install torch==2.11.0 torchvision==0.26.0 torchaudio==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# Windows-specific CUDA notes are not documented yet.
+torch==2.11.0
+torchvision==0.26.0
+torchaudio==2.11.0
+
+numpy==2.4.6
+tiktoken==0.14.0
+datasets==5.1.0
+wandb==0.31.0
+tqdm==4.70.1
+transformers==5.22.1
+
+# PerforatedAI (open-source build, without Perforated Backpropagation) and its dependencies
+perforatedai==3.2.9
+matplotlib==3.11.2
+pandas==3.1.0
+PyYAML==6.0.3
+safetensors==0.8.0
+requests==2.34.2
+cryptography==50.0.2
