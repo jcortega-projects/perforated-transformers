@@ -1,0 +1,135 @@
+C:\Users\dharu\Perforated-transformers\nanoGPT\train_pai.py:164: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  model = UPA.perforate_model(model, save_name=save_name, making_graphs=False, maximizing_score=False).to(device)
+Overriding config with config/midterm.py:
+# Midterm experiment settings: shared by every run (vanilla, matched-parameter vanilla, dendrite variants).
+# Only `out_dir`, `perforate`, `perforate_blocks` (and later `mlp_mult`) change between runs.
+dataset = 'tinystories'
+
+# Model architecture (same as the 1,000-step pilot)
+n_layer = 4
+n_head = 4
+n_embd = 256
+block_size = 128
+dropout = 0.0
+
+# Training
+batch_size = 8
+gradient_accumulation_steps = 4
+max_iters = 2000
+learning_rate = 3e-4
+decay_lr = True
+warmup_iters = 100
+lr_decay_iters = 2000
+min_lr = 3e-5
+seed = 1337
+
+# Evaluation: fixed batches, so every run and every eval sees the same tokens
+eval_interval = 50
+eval_iters = 50
+log_interval = 50
+
+# GPU settings
+device = 'cuda'
+dtype = 'float16'
+compile = False
+
+wandb_log = False
+
+Overriding: out_dir = out-pai-attn
+Overriding: perforate = attn.c_attn
+tokens per iteration: 4,096
+number of parameters: 16.03M
+adding one dendrite to 4 modules: ['.transformer.h.0.attn.c_attn', '.transformer.h.1.attn.c_attn', '.transformer.h.2.attn.c_attn', '.transformer.h.3.attn.c_attn']
+Building dendrites without Perforated Backpropagation
+[PAI Config] Saved 75 variables → C:\Users\dharu\Perforated-transformers\nanoGPT\paioutpaiattn\paioutpaiattn_config.json
+Resetting committed to initial rate to False
+parameters used in forward: 16,058,624 -> 16,848,128 (+789,504)
+step 0: train 10.8628  val 10.8662  train_time 0.0s
+iter 0: loss 10.8508
+step 50: train 8.7330  val 8.7728  train_time 12.8s
+iter 50: loss 8.7618
+step 100: train 5.7102  val 5.7677  train_time 25.2s
+iter 100: loss 5.5892
+step 150: train 4.6678  val 4.7520  train_time 37.8s
+iter 150: loss 4.5770
+step 200: train 4.2699  val 4.3512  train_time 49.8s
+iter 200: loss 4.5606
+step 250: train 4.0428  val 4.1376  train_time 62.0s
+iter 250: loss 4.0999
+step 300: train 3.8824  val 3.9854  train_time 73.9s
+iter 300: loss 3.9686
+step 350: train 3.7401  val 3.8499  train_time 85.9s
+iter 350: loss 3.8599
+step 400: train 3.6432  val 3.7654  train_time 98.1s
+iter 400: loss 3.8574
+step 450: train 3.5501  val 3.6697  train_time 110.2s
+iter 450: loss 3.7474
+step 500: train 3.4773  val 3.5983  train_time 122.7s
+iter 500: loss 3.2507
+step 550: train 3.4237  val 3.5540  train_time 134.5s
+iter 550: loss 3.1853
+step 600: train 3.3588  val 3.4875  train_time 146.6s
+iter 600: loss 3.5282
+step 650: train 3.3064  val 3.4349  train_time 158.8s
+iter 650: loss 3.2575
+step 700: train 3.2503  val 3.3822  train_time 171.2s
+iter 700: loss 3.1772
+step 750: train 3.2135  val 3.3442  train_time 185.5s
+iter 750: loss 3.0549
+step 800: train 3.1709  val 3.3090  train_time 199.5s
+iter 800: loss 3.2218
+step 850: train 3.1382  val 3.2774  train_time 213.7s
+iter 850: loss 2.6993
+step 900: train 3.1095  val 3.2466  train_time 228.0s
+iter 900: loss 3.0533
+step 950: train 3.0786  val 3.2192  train_time 242.3s
+iter 950: loss 3.1916
+step 1000: train 3.0542  val 3.1895  train_time 255.5s
+iter 1000: loss 3.4818
+step 1050: train 3.0253  val 3.1717  train_time 270.3s
+iter 1050: loss 3.5067
+step 1100: train 3.0045  val 3.1482  train_time 283.7s
+iter 1100: loss 2.8790
+step 1150: train 2.9797  val 3.1300  train_time 298.1s
+iter 1150: loss 2.9856
+step 1200: train 2.9686  val 3.1089  train_time 312.5s
+iter 1200: loss 3.0471
+step 1250: train 2.9409  val 3.0856  train_time 327.1s
+iter 1250: loss 3.0242
+step 1300: train 2.9243  val 3.0732  train_time 341.1s
+iter 1300: loss 3.3282
+step 1350: train 2.9040  val 3.0519  train_time 355.0s
+iter 1350: loss 2.9848
+step 1400: train 2.8958  val 3.0433  train_time 368.9s
+iter 1400: loss 3.1198
+step 1450: train 2.8777  val 3.0294  train_time 382.6s
+iter 1450: loss 3.0713
+step 1500: train 2.8669  val 3.0178  train_time 396.6s
+iter 1500: loss 2.9557
+step 1550: train 2.8569  val 3.0049  train_time 411.5s
+iter 1550: loss 3.0909
+step 1600: train 2.8455  val 2.9988  train_time 425.8s
+iter 1600: loss 2.9153
+step 1650: train 2.8323  val 2.9865  train_time 440.3s
+iter 1650: loss 2.9043
+step 1700: train 2.8263  val 2.9811  train_time 454.2s
+iter 1700: loss 2.8392
+step 1750: train 2.8212  val 2.9716  train_time 467.5s
+iter 1750: loss 3.0753
+step 1800: train 2.8141  val 2.9644  train_time 481.8s
+iter 1800: loss 2.9482
+step 1850: train 2.8048  val 2.9597  train_time 496.3s
+iter 1850: loss 2.9044
+step 1900: train 2.7999  val 2.9528  train_time 510.0s
+iter 1900: loss 2.7331
+step 1950: train 2.7962  val 2.9492  train_time 524.3s
+iter 1950: loss 2.8924
+step 2000: train 2.7938  val 2.9478  train_time 538.9s
+{
+  "params_used": 16848128,
+  "final_val_loss": 2.9477503299713135,
+  "final_val_ppl": 19.06301994828613,
+  "train_time_s": 538.9189599000165,
+  "train_tokens_per_s": 15200.801251304703,
+  "peak_train_mem_MiB": 948.05029296875
+}

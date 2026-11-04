@@ -1,0 +1,21 @@
+number of parameters: 16.03M
+Building dendrites without Perforated Backpropagation
+[PAI Config] Loaded 63 variables from C:\Users\dharu\Perforated-transformers\nanoGPT\paibench\paibench_config.json
+[PAI Config] Saved 75 variables → C:\Users\dharu\Perforated-transformers\nanoGPT\paibench\paibench_config.json
+Resetting committed to initial rate to False
+[pai-fc] amp=bfloat16  params(used)=17.111M  nanoGPT-count=18.127M  weights=69.3 MiB  ckpt iter=2000 val_loss=2.948197841644287
+
+PREFILL (one forward pass; batch 1 = time-to-first-token)
+   B     T    latency ms (mean +/- std)   prompt tok/s  peak MiB
+   1    16           82.853 +/- 46.735              193     111.1
+   1    64           49.024 +/- 50.496            1,305     111.3
+   1   128           31.653 +/- 19.633            4,044     111.5
+  32    16           30.276 +/- 8.045            16,911     115.8
+  32    64           27.905 +/- 1.097            73,392     118.5
+  32   128           33.460 +/- 1.158           122,413     150.6
+
+DECODE, cache-free (prompt 64, 32 new tokens, batch 1)
+  per-token latency: 20.682 +/- 0.903 ms   (48.4 tokens/s)   first token: 18.332 ms   peak mem: 111.5 MiB
+
+GPU state after warm-up: sm clock 1140 MHz / max 3105 MHz, power 29.97 W / [N/A], temp 56 C, pstate P4
+saved results\bench_pai-fc_bfloat16.json

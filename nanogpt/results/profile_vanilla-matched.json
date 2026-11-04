@@ -1,0 +1,367 @@
+{
+  "label": "vanilla-matched",
+  "ckpt": "out-vanilla-matched/ckpt.pt",
+  "params_used": 17111296,
+  "runs": [
+    {
+      "amp": "none",
+      "batch": 1,
+      "seq_len": 64,
+      "wall_ms_per_forward": 5.7207320000452455,
+      "kernels_per_forward": 56.0,
+      "gpu_busy_ms_per_forward": 1.208754800000003,
+      "syncs_per_forward": {
+        "aten::_local_scalar_dense": 0.0,
+        "cudaStreamSynchronize": 1.0,
+        "cudaDeviceSynchronize": 0.2
+      },
+      "dtype_casts_per_forward": 1.0,
+      "dtype_cast_gpu_ms_per_forward": 0.0011519000000001142,
+      "top_ops_by_self_cpu": [
+        {
+          "op": "aten::mm",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.4636500000000016,
+          "gpu_ms_per_forward": 0.9505070000000012
+        },
+        {
+          "op": "cudaLaunchKernel",
+          "calls_per_forward": 51.0,
+          "self_cpu_ms_per_forward": 0.38213999999999637,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "cudaStreamSynchronize",
+          "calls_per_forward": 1.0,
+          "self_cpu_ms_per_forward": 0.23215999999999967,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::empty",
+          "calls_per_forward": 47.0,
+          "self_cpu_ms_per_forward": 0.17357999999999923,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::matmul",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.14456999999999556,
+          "gpu_ms_per_forward": 0.9505070000000012
+        },
+        {
+          "op": "aten::native_layer_norm",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.14164999999999822,
+          "gpu_ms_per_forward": 0.06007020000000016
+        },
+        {
+          "op": "aten::add",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.1319700000000019,
+          "gpu_ms_per_forward": 0.028115200000000413
+        },
+        {
+          "op": "Activity Buffer Request",
+          "calls_per_forward": 0.1,
+          "self_cpu_ms_per_forward": 0.09548,
+          "gpu_ms_per_forward": 0.0003264000000000123
+        },
+        {
+          "op": "aten::linear",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.09452000000000157,
+          "gpu_ms_per_forward": 0.9505070000000012
+        },
+        {
+          "op": "aten::transpose",
+          "calls_per_forward": 49.0,
+          "self_cpu_ms_per_forward": 0.08666999999999613,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::_efficient_attention_forward",
+          "calls_per_forward": 4.0,
+          "self_cpu_ms_per_forward": 0.0737499999999989,
+          "gpu_ms_per_forward": 0.13208109999999987
+        },
+        {
+          "op": "aten::gelu",
+          "calls_per_forward": 4.0,
+          "self_cpu_ms_per_forward": 0.055200000000000915,
+          "gpu_ms_per_forward": 0.02029120000000089
+        }
+      ],
+      "gpu_idle_fraction": 0.7887062704579688
+    },
+    {
+      "amp": "none",
+      "batch": 32,
+      "seq_len": 128,
+      "wall_ms_per_forward": 27.18834799990873,
+      "kernels_per_forward": 56.0,
+      "gpu_busy_ms_per_forward": 24.030003599999993,
+      "syncs_per_forward": {
+        "aten::_local_scalar_dense": 0.0,
+        "cudaStreamSynchronize": 1.0,
+        "cudaDeviceSynchronize": 0.2
+      },
+      "dtype_casts_per_forward": 1.0,
+      "dtype_cast_gpu_ms_per_forward": 0.0011805999999985944,
+      "top_ops_by_self_cpu": [
+        {
+          "op": "cudaStreamSynchronize",
+          "calls_per_forward": 1.0,
+          "self_cpu_ms_per_forward": 16.58305,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::mm",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 1.8186299999999742,
+          "gpu_ms_per_forward": 19.2678
+        },
+        {
+          "op": "cudaLaunchKernel",
+          "calls_per_forward": 47.0,
+          "self_cpu_ms_per_forward": 1.8015900000000225,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::empty",
+          "calls_per_forward": 47.0,
+          "self_cpu_ms_per_forward": 0.6119099999999926,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::matmul",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.53285000000001,
+          "gpu_ms_per_forward": 19.2678
+        },
+        {
+          "op": "aten::native_layer_norm",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.43170999999994647,
+          "gpu_ms_per_forward": 1.1975545000000019
+        },
+        {
+          "op": "aten::t",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.42813999999999325,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::add",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.4097999999999853,
+          "gpu_ms_per_forward": 0.43227229999999417
+        },
+        {
+          "op": "aten::_efficient_attention_forward",
+          "calls_per_forward": 4.0,
+          "self_cpu_ms_per_forward": 0.36803000000001596,
+          "gpu_ms_per_forward": 1.8854168000000064
+        },
+        {
+          "op": "aten::transpose",
+          "calls_per_forward": 49.0,
+          "self_cpu_ms_per_forward": 0.27623999999999216,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::linear",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.2709200000000264,
+          "gpu_ms_per_forward": 19.2678
+        },
+        {
+          "op": "cudaMemsetAsync",
+          "calls_per_forward": 8.0,
+          "self_cpu_ms_per_forward": 0.24408000000000393,
+          "gpu_ms_per_forward": 0.0
+        }
+      ],
+      "gpu_idle_fraction": 0.11616536613108441
+    },
+    {
+      "amp": "bfloat16",
+      "batch": 1,
+      "seq_len": 64,
+      "wall_ms_per_forward": 7.044387999922037,
+      "kernels_per_forward": 78.0,
+      "gpu_busy_ms_per_forward": 1.7301362999999976,
+      "syncs_per_forward": {
+        "aten::_local_scalar_dense": 0.0,
+        "cudaStreamSynchronize": 1.0,
+        "cudaDeviceSynchronize": 0.2
+      },
+      "dtype_casts_per_forward": 27.0,
+      "dtype_cast_gpu_ms_per_forward": 0.7652432999999995,
+      "top_ops_by_self_cpu": [
+        {
+          "op": "aten::mm",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.6156100000000012,
+          "gpu_ms_per_forward": 0.652784900000003
+        },
+        {
+          "op": "cudaLaunchKernel",
+          "calls_per_forward": 60.0,
+          "self_cpu_ms_per_forward": 0.4220200000000051,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "cudaStreamSynchronize",
+          "calls_per_forward": 1.0,
+          "self_cpu_ms_per_forward": 0.3225500000000003,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::copy_",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.22541999999999804,
+          "gpu_ms_per_forward": 0.7652432999999995
+        },
+        {
+          "op": "aten::linear",
+          "calls_per_forward": 34.0,
+          "self_cpu_ms_per_forward": 0.19939000000000187,
+          "gpu_ms_per_forward": 2.069523200000006
+        },
+        {
+          "op": "aten::empty",
+          "calls_per_forward": 47.0,
+          "self_cpu_ms_per_forward": 0.1783000000000057,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::empty_strided",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.15781999999999408,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "cuLaunchKernel",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.15682999999999842,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::native_layer_norm",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.15275999999998982,
+          "gpu_ms_per_forward": 0.08594959999999778
+        },
+        {
+          "op": "aten::matmul",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.1495400000000142,
+          "gpu_ms_per_forward": 0.652784900000003
+        },
+        {
+          "op": "aten::_to_copy",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.14594000000000773,
+          "gpu_ms_per_forward": 0.7652432999999995
+        },
+        {
+          "op": "aten::add",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.12660999999999892,
+          "gpu_ms_per_forward": 0.09048049999999876
+        }
+      ],
+      "gpu_idle_fraction": 0.754395087263912
+    },
+    {
+      "amp": "bfloat16",
+      "batch": 32,
+      "seq_len": 128,
+      "wall_ms_per_forward": 15.229502000001958,
+      "kernels_per_forward": 74.0,
+      "gpu_busy_ms_per_forward": 11.01704099999998,
+      "syncs_per_forward": {
+        "aten::_local_scalar_dense": 0.0,
+        "cudaStreamSynchronize": 1.0,
+        "cudaDeviceSynchronize": 0.2
+      },
+      "dtype_casts_per_forward": 27.0,
+      "dtype_cast_gpu_ms_per_forward": 0.7223502000000133,
+      "top_ops_by_self_cpu": [
+        {
+          "op": "cudaStreamSynchronize",
+          "calls_per_forward": 1.0,
+          "self_cpu_ms_per_forward": 3.437860000000005,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "cudaLaunchKernel",
+          "calls_per_forward": 64.0,
+          "self_cpu_ms_per_forward": 2.3812999999999813,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::mm",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 1.9307300000000116,
+          "gpu_ms_per_forward": 7.294492799999978
+        },
+        {
+          "op": "aten::copy_",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.7267400000000067,
+          "gpu_ms_per_forward": 0.7223502000000133
+        },
+        {
+          "op": "aten::empty_strided",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.5944399999999995,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::empty",
+          "calls_per_forward": 47.0,
+          "self_cpu_ms_per_forward": 0.584539999999972,
+          "gpu_ms_per_forward": 0.0
+        },
+        {
+          "op": "aten::linear",
+          "calls_per_forward": 34.0,
+          "self_cpu_ms_per_forward": 0.512179999999992,
+          "gpu_ms_per_forward": 15.31018709999997
+        },
+        {
+          "op": "aten::_to_copy",
+          "calls_per_forward": 27.0,
+          "self_cpu_ms_per_forward": 0.46876000000000295,
+          "gpu_ms_per_forward": 0.7223502000000133
+        },
+        {
+          "op": "aten::native_layer_norm",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.46497000000000754,
+          "gpu_ms_per_forward": 1.1639667999999896
+        },
+        {
+          "op": "aten::add",
+          "calls_per_forward": 9.0,
+          "self_cpu_ms_per_forward": 0.3866600000000043,
+          "gpu_ms_per_forward": 0.6359312999999955
+        },
+        {
+          "op": "aten::matmul",
+          "calls_per_forward": 17.0,
+          "self_cpu_ms_per_forward": 0.3826599999999852,
+          "gpu_ms_per_forward": 7.294492799999978
+        },
+        {
+          "op": "aten::transpose",
+          "calls_per_forward": 49.0,
+          "self_cpu_ms_per_forward": 0.2504599999999786,
+          "gpu_ms_per_forward": 0.0
+        }
+      ],
+      "gpu_idle_fraction": 0.2765987357959201
+    }
+  ]
+}

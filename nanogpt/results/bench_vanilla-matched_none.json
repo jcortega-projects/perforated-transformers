@@ -1,0 +1,177 @@
+{
+  "label": "vanilla-matched",
+  "amp": "none",
+  "ckpt": "out-vanilla-matched/ckpt.pt",
+  "checkpoint_meta": {
+    "iter_num": 2000,
+    "best_val_loss": 2.9413535594940186
+  },
+  "model_args": {
+    "block_size": 128,
+    "vocab_size": 50304,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_embd": 256,
+    "dropout": 0.0,
+    "bias": false
+  },
+  "params_used": 17111296,
+  "params_nanogpt_count": 17078528,
+  "weights_MiB": 65.2744140625,
+  "settings": {
+    "runs": 5,
+    "iters": 50,
+    "warmup": 10,
+    "batches": [
+      1,
+      32
+    ],
+    "seq-lens": [
+      16,
+      64,
+      128
+    ],
+    "prompt-len": 64,
+    "new-tokens": 32
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "python": "3.11.9",
+    "os": "Windows-10-10.0.26200-SP0",
+    "gpu_state_before": {
+      "clocks.sm": "210 MHz",
+      "clocks.max.sm": "3105 MHz",
+      "clocks.mem": "405 MHz",
+      "power.draw": "3.24 W",
+      "power.limit": "[N/A]",
+      "temperature.gpu": "50",
+      "pstate": "P8",
+      "clocks_throttle_reasons.active": "0x0000000000000001"
+    },
+    "gpu_state_after_warmup": {
+      "clocks.sm": "1290 MHz",
+      "clocks.max.sm": "3105 MHz",
+      "clocks.mem": "6001 MHz",
+      "power.draw": "26.64 W",
+      "power.limit": "[N/A]",
+      "temperature.gpu": "53",
+      "pstate": "P4",
+      "clocks_throttle_reasons.active": "0x0000000000000024"
+    },
+    "gpu_state_after": {
+      "clocks.sm": "780 MHz",
+      "clocks.max.sm": "3105 MHz",
+      "clocks.mem": "6001 MHz",
+      "power.draw": "14.84 W",
+      "power.limit": "[N/A]",
+      "temperature.gpu": "52",
+      "pstate": "P4",
+      "clocks_throttle_reasons.active": "0x0000000000000001"
+    }
+  },
+  "prefill": [
+    {
+      "batch": 1,
+      "seq_len": 16,
+      "latency_ms": {
+        "mean": 4.805173217773437,
+        "std": 0.6663466323555556,
+        "min": 4.049121398925781,
+        "max": 5.8361444091796875,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 3329.7446886657467,
+      "peak_mem_MiB": 74.5419921875
+    },
+    {
+      "batch": 1,
+      "seq_len": 64,
+      "latency_ms": {
+        "mean": 5.149413452148438,
+        "std": 0.30585047252600167,
+        "min": 4.877824096679688,
+        "max": 5.602201538085938,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 12428.599993907641,
+      "peak_mem_MiB": 75.3388671875
+    },
+    {
+      "batch": 1,
+      "seq_len": 128,
+      "latency_ms": {
+        "mean": 4.718174194335938,
+        "std": 0.525957359505171,
+        "min": 4.30376953125,
+        "max": 5.60289794921875,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 27129.13824878724,
+      "peak_mem_MiB": 76.4033203125
+    },
+    {
+      "batch": 32,
+      "seq_len": 16,
+      "latency_ms": {
+        "mean": 7.215435668945313,
+        "std": 0.42268602088376533,
+        "min": 6.6344140625,
+        "max": 7.743262939453125,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 70958.9861917291,
+      "peak_mem_MiB": 82.30224609375
+    },
+    {
+      "batch": 32,
+      "seq_len": 64,
+      "latency_ms": {
+        "mean": 14.38740478515625,
+        "std": 0.16190648389503748,
+        "min": 14.157086181640626,
+        "max": 14.559437255859375,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 142346.72830731497,
+      "peak_mem_MiB": 106.38427734375
+    },
+    {
+      "batch": 32,
+      "seq_len": 128,
+      "latency_ms": {
+        "mean": 24.82220654296875,
+        "std": 0.3246617084985765,
+        "min": 24.41523193359375,
+        "max": 25.19412841796875,
+        "n": 5
+      },
+      "prompt_tokens_per_s": 165013.53305998704,
+      "peak_mem_MiB": 138.494140625
+    }
+  ],
+  "decode_cache_free": {
+    "prompt_len": 64,
+    "new_tokens": 32,
+    "batch": 1,
+    "kv_cache": false,
+    "per_token_latency_ms": {
+      "mean": 4.562380395829678,
+      "std": 0.23494594201924596,
+      "min": 4.2927999794483185,
+      "max": 4.933470010757446,
+      "n": 5
+    },
+    "first_token_ms": {
+      "mean": 4.229324865341186,
+      "std": 0.9209642000445173,
+      "min": 3.645440101623535,
+      "max": 5.844992160797119,
+      "n": 5
+    },
+    "tokens_per_s": 219.1838280109364,
+    "peak_mem_MiB": 76.0478515625
+  },
+  "wall_seconds": 24.68024492263794
+}

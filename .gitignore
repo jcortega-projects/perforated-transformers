@@ -27,3 +27,8 @@ results/*
 # nanoGPT / experiment tracking outputs
 wandb/
 out-*/
+
+# PerforatedAI internal save folders written into the working directory by train_pai.py / bench_inference.py
+nanogpt/pai*/
+# Profiler Chrome traces (large; regenerate with profile_pai.py --trace)
+nanogpt/results/traces/

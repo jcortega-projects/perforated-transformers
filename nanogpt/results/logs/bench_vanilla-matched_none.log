@@ -1,0 +1,18 @@
+number of parameters: 16.03M
+MLP hidden width 1024 -> 1538
+[vanilla-matched] amp=none  params(used)=17.111M  nanoGPT-count=17.079M  weights=65.3 MiB  ckpt iter=2000 val_loss=2.9413535594940186
+
+PREFILL (one forward pass; batch 1 = time-to-first-token)
+   B     T    latency ms (mean +/- std)   prompt tok/s  peak MiB
+   1    16            4.805 +/- 0.666             3,330      74.5
+   1    64            5.149 +/- 0.306            12,429      75.3
+   1   128            4.718 +/- 0.526            27,129      76.4
+  32    16            7.215 +/- 0.423            70,959      82.3
+  32    64           14.387 +/- 0.162           142,347     106.4
+  32   128           24.822 +/- 0.325           165,014     138.5
+
+DECODE, cache-free (prompt 64, 32 new tokens, batch 1)
+  per-token latency: 4.562 +/- 0.235 ms   (219.2 tokens/s)   first token: 4.229 ms   peak mem: 76.0 MiB
+
+GPU state after warm-up: sm clock 1290 MHz / max 3105 MHz, power 26.64 W / [N/A], temp 53 C, pstate P4
+saved results\bench_vanilla-matched_none.json
