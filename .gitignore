@@ -7,6 +7,8 @@ venv/
 
 # Datasets and checkpoints
 data/
+# ...but track the vendored nanoGPT data-prep scripts (generated *.bin stay ignored via *.bin)
+!nanogpt/data/
 checkpoints/
 *.pt
 *.pth
@@ -21,3 +23,7 @@ results/*
 .DS_Store
 .vscode/
 .idea/
+
+# nanoGPT / experiment tracking outputs
+wandb/
+out-*/
